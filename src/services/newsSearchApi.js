@@ -3,17 +3,17 @@ export const fetchArticles = async (search) => {
   const res = await fetch(`https://newsapi.org/v2/everything?qInTitle=${search}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`);
   const json = await res.json();
   const articles = json.articles;
-  const mungedArticles = mungeThese(articles);
+  const mungedArticles = formatArticles(articles);
   return mungedArticles;
 };
 
-const mungeThese = (array) => {
+const formatArticles = (array) => {
   return array.map((single) => {return {
+    id: single.source.id,
     author: single.author,
     title: single.title,
     content: single.content,
     urlToImage: single.urlToImage,
-    id: single.source.id,
     name: single.source.name
   };});
 };

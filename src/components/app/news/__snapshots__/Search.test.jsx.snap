@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search should displays a form with an input and submit button 1`] = `
+<form
+  data-testid="search-form"
+>
+  <label
+    for="articleTitle"
+  >
+    Search by Keyword in Title:
+  </label>
+  <input
+    id="articleTitle"
+    type="text"
+    value="bunnies"
+  />
+  <button
+    aria-label="find-articles"
+  >
+    Submit
+  </button>
+</form>
+`;
