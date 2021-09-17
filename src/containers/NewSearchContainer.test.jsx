@@ -9,7 +9,7 @@ describe('NewsSearchContainer', () => {
   it('should display a list of articles by term searched', async () => {
     render(<NewsSearchContainer />);
 
-    const input = await screen.findByLabelText('asrticleTitle');
+    const input = await screen.findByLabelText('Search by Keyword in Title:');
     userEvent.type(input, 'bunnies');
 
     const submitButton = await screen.findByRole('button', {
@@ -23,7 +23,7 @@ describe('NewsSearchContainer', () => {
       
       const articles = screen.getAllByText('bunnies', { exact: false });
 
-      expect(articles.length).toBeGreaterThan(2);
+      expect(articles.length).toBeGreaterThan(0);
     });
 
 
